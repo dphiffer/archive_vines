@@ -18,7 +18,7 @@ cd archive_vines
 
 ## What does it archive?
 
-The script will download one of each of the following for each vine you've ever uploaded.
+The script will download one of the following for each vine you've ever uploaded.
 
 * An MPEG-4 video
 * A JPEG thumbnail image
