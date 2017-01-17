@@ -123,8 +123,10 @@ command -v jq >/dev/null 2>&1 || { echo >&2 "I require 'jq' but it's not install
 if [ ! -f cache/auth.json ] ; then
 
     echo "Vine does support Twitter OAuth, but I didn't implement it here. Sorry, we just"
-    echo "gotta go with username/password. We cache this in 'cache/auth.json' so if you"
-    echo "don't want to leave your credentials on disk, that's the file to clean up."
+    echo "gotta go with username/password."
+    echo
+    echo "We cache a session key in 'cache/auth.json' so if you don't want to leave any"
+    echo "credentials on disk, that's the file to clean up."
     echo
 
     read -p "Email address: " email
