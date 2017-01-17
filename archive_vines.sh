@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Usage:
-#   archive_vines.sh "user@example.com" "password"
+#   ./archive_vines.sh
 
 # Saves each of your Vine video, image, and metadata in a timeline folder.
 
