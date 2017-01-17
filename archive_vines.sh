@@ -120,16 +120,17 @@ command -v youtube-dl >/dev/null 2>&1 || { echo >&2 "I require 'youtube-dl' but 
 command -v curl >/dev/null 2>&1 || { echo >&2 "I require 'curl' but it's not installed."; exit 1; }
 command -v jq >/dev/null 2>&1 || { echo >&2 "I require 'jq' but it's not installed."; exit 1; }
 
-if [ "$#" -eq 2 ] ; then
+if [ ! -f cache/auth.json ] ; then
 
-    # If we have two arguments, then try to login
-    vine_auth "$1" "$2"
+    echo "Vine does support Twitter OAuth, but I didn't implement it here. Sorry, we just"
+    echo "gotta go with username/password. We cache this in 'cache/auth.json' so if you"
+    echo "don't want to leave your credentials on disk, that's the file to clean up."
+    echo
 
-elif [ ! -f cache/auth.json ] ; then
+    read -p "Email address: " email
+    read -s -p "Password: " password
 
-    # If there is no cached auth credentials, bail out
-    echo "Usage: archive_vines.sh \"you@example.com\" \"password\""
-    exit 1
+    vine_auth $email $password
 
 else
 
