@@ -2,6 +2,8 @@
 
 A shell script to archive all your Vines.
 
+__NOTE: THIS DOES NOT WORK ANY MORE, BECAUSE VINE'S API DOES NOT WORK__
+
 ## Dependencies
 
 * `curl` https://curl.haxx.se/
